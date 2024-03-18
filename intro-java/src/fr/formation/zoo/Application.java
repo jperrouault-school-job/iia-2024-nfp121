@@ -23,9 +23,17 @@ public class Application {
 
         Animal[] animaux = { albert, bernard, cecile, didier };
 
-        for (int i = 0; i < animaux.length; i++) {
-            System.out.println(animaux[i]);
-            animaux[i].manger();
+        // for (int i = 0; i < animaux.length; i++) {
+        //     System.out.println(animaux[i]);
+        //     animaux[i].manger();
+        // }
+
+        AnimauxIterator animauxIterator = new AnimauxIterator(animaux);
+
+        while (animauxIterator.hasNext()) {
+            Animal animal = animauxIterator.next();
+            System.out.println(animal);
+            animal.manger();
         }
 
         // SoigneurZebre soigneurZebre = new SoigneurEtudiantZebre();
