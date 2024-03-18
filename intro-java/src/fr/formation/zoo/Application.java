@@ -18,7 +18,7 @@ public class Application {
         Zebre bernard = new Zebre();
         Tigre cecile = new Tigre("Cécile");
         Tigre didier = new Tigre("Didier");
-        
+
         bernard.setNom("Bernard");
 
         Animal[] animaux = { albert, bernard, cecile, didier };
@@ -27,5 +27,12 @@ public class Application {
             System.out.println(animaux[i]);
             animaux[i].manger();
         }
+
+        SoigneurZebre soigneurZebre = new SoigneurZebre();
+        SoigneurTigre soigneurTigre = new SoigneurTigre();
+
+        soigneurZebre.soigner(albert);
+        soigneurTigre.soigner(didier);
+        soigneurZebre.soigner(didier);
     }
 }
