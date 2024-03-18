@@ -33,6 +33,6 @@ public class Application {
 
         soigneurZebre.soigner(albert);
         soigneurTigre.soigner(didier);
-        soigneurZebre.soigner(didier);
+        // soigneurZebre.soigner(didier); // Plus possible avec les génériques !
     }
 }
