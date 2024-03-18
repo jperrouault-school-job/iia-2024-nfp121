@@ -28,8 +28,10 @@ public class Application {
             animaux[i].manger();
         }
 
-        SoigneurZebre soigneurZebre = new SoigneurEtudiantZebre();
-        SoigneurTigre soigneurTigre = new SoigneurProTigre();
+        // SoigneurZebre soigneurZebre = new SoigneurEtudiantZebre();
+        // SoigneurTigre soigneurTigre = new SoigneurProTigre();
+        SoigneurZebre soigneurZebre = SoigneurFactory.createSoigneurZebre();
+        SoigneurTigre soigneurTigre = SoigneurFactory.createSoigneurTigre();
 
         soigneurZebre.soigner(albert);
         soigneurTigre.soigner(didier);
