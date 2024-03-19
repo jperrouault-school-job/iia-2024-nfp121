@@ -1,5 +1,8 @@
 package fr.formation.zoo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Application {
     public static void main(String[] args) {
         // Zebre albert = new Zebre();
@@ -33,6 +36,18 @@ public class Application {
 
         while (animauxIterator.hasNext()) {
             Animal animal = animauxIterator.next();
+            System.out.println(animal);
+            animal.manger();
+        }
+
+        List<Animal> animauxListe = new ArrayList<>();
+
+        animauxListe.add(albert);
+        animauxListe.add(bernard);
+        animauxListe.add(cecile);
+        animauxListe.add(didier);
+
+        for (Animal animal : animauxListe) {
             System.out.println(animal);
             animal.manger();
         }
