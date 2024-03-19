@@ -28,7 +28,8 @@ public class Application {
         //     animaux[i].manger();
         // }
 
-        AnimauxIterator animauxIterator = new AnimauxIterator(animaux);
+        // AnimauxIterator animauxIterator = new AnimauxIterator(animaux);
+        AnimauxIterator animauxIterator = AnimauxIterator.getInstance(animaux);
 
         while (animauxIterator.hasNext()) {
             Animal animal = animauxIterator.next();

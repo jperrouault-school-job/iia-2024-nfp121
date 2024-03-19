@@ -1,11 +1,20 @@
 package fr.formation.zoo;
 
 public class AnimauxIterator implements Iterator<Animal> {
+    private static AnimauxIterator instance;
     private Animal[] animaux;
     private int index;
 
-    public AnimauxIterator(Animal[] animaux) {
+    private AnimauxIterator(Animal[] animaux) {
         this.animaux = animaux;
+    }
+
+    public static AnimauxIterator getInstance(Animal[] animaux) {
+        if (instance == null) {
+            instance = new AnimauxIterator(animaux);
+        }
+
+        return instance;
     }
 
     @Override
