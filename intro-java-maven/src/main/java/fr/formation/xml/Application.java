@@ -3,6 +3,7 @@ package fr.formation.xml;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -20,7 +21,9 @@ public class Application {
         ;
 
         // Sérialisation : passer de l'objet Java en "texte"
-        XmlMapper mapper = new XmlMapper();
+        // XmlMapper mapper = new XmlMapper();
+        ObjectMapper mapper = new XmlMapper();
+        // ObjectMapper mapper = new ObjectMapper(); // Pour la sérialisation en JSON
 
         // Ajout du module JSR310 (API JAVA 8 - Date et Heure)
         mapper.registerModule(new JavaTimeModule());
