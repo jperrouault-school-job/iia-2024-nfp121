@@ -32,8 +32,8 @@ public class SocketClientManager {
                 client.send("hello client");
             }
 
-            else if (messageClient.equals("all")) {
-                this.sendToAllExcept("Message à tous", client);
+            else if (messageClient.startsWith("all")) {
+                this.sendToAllExcept(messageClient.replace("all ", ""), client);
             }
 
             else if (messageClient.equals("quit")) {

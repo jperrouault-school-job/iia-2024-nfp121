@@ -29,7 +29,7 @@ public class SocketClient {
             return this.input.readLine();
         }
         
-        catch (IOException e) {
+        catch (Exception e) {
             System.out.println("Impossible de lire l'input ...");
             return "";
         }
