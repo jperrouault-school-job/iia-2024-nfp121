@@ -26,12 +26,27 @@ public class ApplicationServer {
             PrintWriter output = new PrintWriter(client.getOutputStream(), true); // le param true permet un autoflush
             BufferedReader input = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
-            // Attente d'un message du client
-            String messageClient = input.readLine();
-            System.out.println("Le message du client est : " + messageClient);
+            while (true) {
+                // Attente d'un message du client
+                String messageClient = input.readLine();
+                System.out.println("Le message du client est : " + messageClient);
+                
+                if (messageClient.equals("hello")) {
+                    // Envoyer un message au client
+                    output.println("hello client");
+                }
 
-            // Envoyer un message au client
-            output.println("OK");
+                else if (messageClient.equals("quit")) {
+                    // Envoyer un message au client
+                    output.println("bye");
+                    break; // Sortir de la boucle
+                }
+                
+                else {
+                    // Envoyer un message au client
+                    output.println("command not found");
+                }
+            }
         }
 
         catch (Exception ex) {
