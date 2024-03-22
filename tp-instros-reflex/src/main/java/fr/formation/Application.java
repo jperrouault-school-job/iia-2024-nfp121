@@ -7,7 +7,16 @@ import java.lang.reflect.Method;
 
 public class Application {
     public static void main(String[] args) {
+        BeanFactory beanFactory = new BeanFactory();
+
+        Photo photo = beanFactory.createBean(Photo.class);
+        Application aa = beanFactory.createBean(Application.class);
+        String str = beanFactory.createBean(String.class);
         
+        System.out.println(photo);
+    }
+
+    public static void intro() {
         // Introspection : capacité à parcourir les informations (meta) d'une classe (attributs, méthodes, constructeurs, annotations, etc.)
         // > A partir d'un type / d'une classe / d'une interface
         
